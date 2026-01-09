@@ -39,7 +39,4 @@ The following graph was generated using `matplotlib` to visualize the relationsh
 
 ![Correlation Analysis Graph](correlation_graph.png)
 
----
-
-## Assignment 2: Spam Email Detection
 *(You can add your specific results for Assignment 2 here once the model is trained)*
