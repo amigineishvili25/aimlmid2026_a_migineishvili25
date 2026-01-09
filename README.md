@@ -24,17 +24,10 @@ The Pearson correlation coefficient is defined by the following formula:
 $$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$
 
 **Result:**
-The calculated Pearson Correlation Coefficient is **0.99880**. This value indicates an extremely strong positive linear correlation, meaning that as one variable increases, the other increases in a nearly perfect linear fashion.
+The calculated Pearson Correlation Coefficient is **0.99880**. This value indicates an extremely strong positive linear correlation.
 
 ### 3. Visualizations
-The report includes the following visual evidence of the data extraction and analysis process:
-
-#### A. Data Extraction (Hover Coordinates)
-The following image shows the original data source and the process of extracting coordinates via mouse hovering:
-![Source Data Extraction](1.png)
-
-#### B. Correlation Analysis Plot
-The following graph was generated using `matplotlib` to visualize the relationship and the calculated correlation coefficient:
+#### Correlation Analysis Plot
 ![Correlation Analysis Graph](correlation_graph.png)
 
 ---
@@ -42,10 +35,9 @@ The following graph was generated using `matplotlib` to visualize the relationsh
 ## Assignment 2: Spam Email Detection
 
 ### 1. Data Source and Extraction
-The first step of this assignment involved identifying and linking the dataset used for training the detection model.
-* **Dataset Link:** [a_migineishvili25_93254.csv](./a_migineishvili25_93254_csv.csv)
-* **Extraction Evidence:**
-![Data Source Screenshot](2.png)
+The first step involved identifying and retrieving the dataset required for training the classification model.
+* **Source URL:** The dataset was accessed and downloaded from the link: `http://max.ge/aiml_midterm/93254_csv`
+* **Dataset Identification:** The downloaded file `a_migineishvili25_93254.csv` contains the labeled data (Spam vs. Legitimate) and the pre-calculated features: `words`, `links`, `capital_words`, and `spam_word_count`.
 
 ### 2. Data Loading and Splitting
 Using the `pandas` library, the dataset was loaded and prepared for machine learning. To evaluate the model's ability to generalize, the data was split into:
@@ -54,7 +46,9 @@ Using the `pandas` library, the dataset was loaded and prepared for machine lear
 * **Method:** `train_test_split(X, y, test_size=0.30, random_state=42)`
 
 ### 3. Logistic Regression Model Implementation
-A Logistic Regression model was implemented using `scikit-learn`. This algorithm was chosen due to its effectiveness in binary classification tasks (Spam vs. Legitimate).
+A Logistic Regression model was implemented using `scikit-learn` for binary classification.
+
+
 
 **Model Parameters:**
 * **Intercept:** `-3.8421`
@@ -63,7 +57,6 @@ A Logistic Regression model was implemented using `scikit-learn`. This algorithm
     * `links`: 0.9214
     * `capital_words`: 0.1450
     * `spam_word_count`: 1.2840
-* **Analysis:** The coefficients show that the number of links and specific spam trigger words are the most significant predictors for our model.
 
 ### 4. Validation and Metrics
 The model was validated against the 30% test set with the following results:
@@ -77,18 +70,18 @@ The model was validated against the 30% test set with the following results:
 
 **A. Manually Composed Spam Email:**
 > *"URGENT! You have WON a 1000$ GIFT CARD. CLICK HERE: http://win-rewards.com to claim. FREE PRIZE!"*
-* **Explanation:** This email was created to be flagged as spam by maximizing the "capital_words" feature (URGENT, WON, GIFT CARD), including a link, and using high-weight trigger words like "win" and "prize".
+* **Explanation:** This email was created to be flagged as spam by maximizing the `capital_words` feature, including a link, and using trigger words like "win" and "prize".
 
 **B. Manually Composed Legitimate Email:**
 > *"Hi Avtandil, could you please send me the report for the last project? We need it for the 10 AM meeting tomorrow."*
-* **Explanation:** This email uses standard professional vocabulary, has normal capitalization, and contains no links or suspicious trigger words, leading the model to classify it as legitimate.
+* **Explanation:** This email uses professional vocabulary, normal capitalization, and contains no links, leading the model to classify it as legitimate.
 
 ### 6. Visualizations
 
 #### Visualization A: Class Distribution Study
 ![Class Distribution](distribution.png)
-* **Description:** This pie chart shows the balance of the dataset. With a nearly equal ratio of Spam to Legitimate emails, the model is balanced and avoids bias toward a single class.
+* **Description:** This pie chart shows the balance of the dataset. The nearly equal ratio ensures the model is not biased toward a single class.
 
 #### Visualization B: Confusion Matrix Heatmap
 ![Confusion Matrix Heatmap](confusion_matrix.png)
-* **Description:** This heatmap provides a visual look at the model's accuracy. The high values on the diagonal represent correct classifications, showing that the model has a very low error rate for both classes.
+* **Description:** This heatmap visualizes the model's accuracy, showing high rates of
