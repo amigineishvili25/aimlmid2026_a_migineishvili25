@@ -1,38 +1,45 @@
-# aimlmid2026_a_migineishvili25
-This is the detailed English content for your README.md file. It is structured to meet all the requirements of your "AI and ML for Cybersecurity" midterm exam.
+# AI and ML for Cybersecurity - Midterm Exam
 
-AI and ML for Cybersecurity - Midterm Exam
+[cite_start]**Student:** Avtandil Migineishvili [cite: 5]
+[cite_start]**Date:** January 9, 2026 [cite: 6]
+[cite_start]**Repository:** aimlmid2026_a_migineishvili25 [cite: 14]
 
-Student: Avtandil Migineishvili
+---
 
-Date: January 9, 2026
+## Assignment 1: Finding the Correlation
 
-Repository Name: aimlmid2026_a_migineishvili25
+### 1. Data Collection and Extraction Process
+[cite_start]The objective of this task was to analyze a dataset presented on an interactive graph and determine the strength of the linear relationship between two variables[cite: 24, 25].
 
-Assignment 1: Finding the Correlation
+* [cite_start]**Source:** The data was accessed from the specified URL: `max.ge/aiml_midterm/93254_html`[cite: 26].
+* [cite_start]**Method:** To extract the precise coordinates, I used the hover functionality on the interactive graph, which reveals the (X, Y) values for each of the blue data points[cite: 26, 27].
+* **Data Points:** Based on the requirements to align the axes as shown in the visualization (where the X-axis is vertical and the Y-axis is horizontal), the following coordinates were extracted:
+    * **Vertical (X):** `0.60, 2.250, 4.90, 7.10, 9.40, -1.40, -3.70, -5.90, -8.20`
+    * **Horizontal (Y):** `0.90, 2.240, 4.20, 6.10, 8.50, -1.10, -2.80, -4.90, -7.50`
 
-Goal: Extract data points from an online graph, calculate Pearson's correlation coefficient, and provide a visualization.
+### 2. Methodology and Calculation
+[cite_start]The Pearson correlation coefficient was calculated using the Python programming language, specifically utilizing the `scipy.stats` library[cite: 18, 28].
 
-1. Data Collection Process
+The Pearson correlation coefficient is defined by the following formula:
+$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$
 
-    The data was collected from the following address: max.ge/aiml_midterm/93254_html.
+**Result:**
+[cite_start]The calculated Pearson Correlation Coefficient is **0.99880**[cite: 28]. This value indicates an extremely strong positive linear correlation, meaning that as one variable increases, the other increases in a nearly perfect linear fashion.
 
-Coordinates were extracted by hovering over the blue data points on the provided interactive graph.
+### 3. Visualizations
+[cite_start]The report includes the following visual evidence of the data extraction and analysis process[cite: 29]:
 
-    The following 9 points were recorded (swapped according to the specific axes requested):
+#### A. Data Extraction (Hover Coordinates)
+The following image shows the original data source and the process of extracting coordinates via mouse hovering:
 
-        X (Vertical Axis): [0.60, 2.250, 4.90, 7.10, 9.40, -1.40, -3.70, -5.90, -8.20]
+![Source Data Extraction](1.png)
 
-        Y (Horizontal Axis): [0.90, 2.240, 4.20, 6.10, 8.50, -1.10, -2.80, -4.90, -7.50]
+#### B. Correlation Analysis Plot
+The following graph was generated using `matplotlib` to visualize the relationship and the calculated correlation coefficient:
 
-2. Calculation & Methodology
+![Correlation Analysis Graph](correlation_graph.png)
 
-    The calculation was performed using Python's scipy.stats library.
+---
 
-Pearson's Correlation Coefficient (r): 0.99880.
-
-The result indicates a near-perfect positive linear relationship between the variables.
-
-3. Visualization
-
-Figure 1: Scatter plot showing the strong positive correlation between the extracted coordinates.
+## Assignment 2: Spam Email Detection
+*(You can add your specific results for Assignment 2 here once the model is trained)*
