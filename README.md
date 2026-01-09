@@ -43,7 +43,7 @@ The following graph was generated using `matplotlib` to visualize the relationsh
 
 ### 1. Data Source and Extraction
 The first step of this assignment involved identifying and linking the dataset used for training the detection model.
-* **Dataset Link:** [a_migineishvili25_93254.csv](./a_migineishvili25_93254_csv.csv)
+* **Dataset Link:** [a_migineishvili25_93254.csv](https://max.ge/aiml_midterm/a_migineishvili25_93254_csv/)
 * **Extraction Evidence:**
 ![Data Source Screenshot](2.png)
 
