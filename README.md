@@ -45,39 +45,7 @@ The following graph was generated using `matplotlib` to visualize the relationsh
 
 
 
-# AI and ML for Cybersecurity - Midterm Exam
 
-**Student:** Avtandil Migineishvili  
-**Date:** January 9, 2026  
-**Repository:** `aimlmid2026_a_migineishvili25`
-
----
-
-## Assignment 1: Finding the Correlation (10 Points)
-
-### 1. Task Objective and Data Extraction
-The goal was to extract data points from an interactive online graph and determine the statistical relationship between the variables using the Pearson correlation coefficient.
-
-* **Source:** Data was retrieved from: `max.ge/aiml_midterm/93254_html`.
-* **Methodology:** I used the hover effect on the graph to extract coordinates for 9 specific points.
-* **Coordinate Mapping:**
-    * **X (Vertical Axis):** `[0.60, 2.250, 4.90, 7.10, 9.40, -1.40, -3.70, -5.90, -8.20]`
-    * **Y (Horizontal Axis):** `[0.90, 2.240, 4.20, 6.10, 8.50, -1.10, -2.80, -4.90, -7.50]`
-
-### 2. Statistical Calculation
-The Pearson correlation coefficient ($r$) was calculated using the following formula:
-$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$
-
-**Result:**
-* **Pearson Correlation Coefficient:** **0.99880**
-* **Interpretation:** This value indicates a very strong positive linear correlation between the X and Y coordinates.
-
-### 3. Visualizations
-![Source Data Extraction](2.png)
-*Figure 1: Original data points extraction via hover effect.*
-
-![Correlation Analysis Plot](correlation_plot.png)
-*Figure 2: Scatter plot and regression line showing the strong linear relationship.*
 
 ---
 
