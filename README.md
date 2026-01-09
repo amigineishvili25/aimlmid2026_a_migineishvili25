@@ -73,7 +73,7 @@ $$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \s
 * **Interpretation:** This value indicates a very strong positive linear correlation between the X and Y coordinates.
 
 ### 3. Visualizations
-![Source Data Extraction](Screenshot%20from%202026-01-09%2023-06-30.png)
+![Source Data Extraction](2.png)
 *Figure 1: Original data points extraction via hover effect.*
 
 ![Correlation Analysis Plot](correlation_plot.png)
