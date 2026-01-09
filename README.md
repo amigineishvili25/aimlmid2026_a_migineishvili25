@@ -44,55 +44,57 @@ The following graph was generated using `matplotlib` to visualize the relationsh
 
 
 
-
-
-
----
-
 ## Assignment 2: Spam Email Detection (20 Points)
 
-### 1. Data Source and Features
-The model uses a CSV dataset consisting of features extracted from various emails to classify them as "Spam" or "Legitimate".
-* **Data Link:** [a_migineishvili25_93254.csv](./a_migineishvili25_93254.csv)
-* **Features:** `words` (count), `links` (URL count), `capital_words` (uppercase count), and `spam_word_count` (frequency of specific trigger words).
+### 1. Data Source and Extraction
+The first step of this assignment involved identifying and linking the dataset used for training the detection model.
+* **Dataset Link:** [a_migineishvili25_93254.csv](./a_migineishvili25_93254_csv.csv)
+* **Extraction Evidence:**
+![Data Source Screenshot](2.png)
+*Figure 3: Evidence of the dataset source and initial feature identification.*
 
-### 2. Model Development
-* **Algorithm:** Logistic Regression (Binary Classifier).
-* **Data Split:** I used a **70% training** and **30% testing** split ratio to evaluate the model's performance on unseen data.
-* **Tooling:** Python 3 with `pandas`, `scikit-learn`, `matplotlib`, and `seaborn`.
+### 2. Data Loading and Splitting
+Using the `pandas` library, the dataset was loaded and prepared for machine learning. To evaluate the model's ability to generalize, the data was split into:
+* **Training Set:** 70% of the data.
+* **Testing Set:** 30% of the data.
+* **Method:** `train_test_split(X, y, test_size=0.30, random_state=42)`
 
-### 3. Results and Coefficients
-The model's performance on the test set yielded the following metrics:
-* **Accuracy Score:** **0.9633** (96.33% accuracy).
-* **Model Intercept:** `-3.8421`
-* **Feature Weights (Coefficients):** * The features `spam_word_count` (1.284) and `links` (0.921) have the highest impact on the model's decision to flag an email as spam.
+### 3. Logistic Regression Model Implementation
+A Logistic Regression model was implemented using `scikit-learn`. This algorithm was chosen due to its effectiveness in binary classification tasks (Spam vs. Legitimate).
 
-### 4. Validation (Confusion Matrix)
+**Model Parameters:**
+* **Intercept:** `-3.8421`
+* **Feature Coefficients:**
+    * `words`: 0.0008
+    * `links`: 0.9214
+    * `capital_words`: 0.1450
+    * `spam_word_count`: 1.2840
+* **Analysis:** The coefficients show that the number of links and specific spam trigger words are the most significant predictors for our model.
+
+### 4. Validation and Metrics
+The model was validated against the 30% test set with the following results:
+* **Accuracy Score:** **0.9633** (96.33% correctly predicted).
+* **Confusion Matrix:**
 
 [[142, 6], [5, 147]]
 
 
-The matrix shows that out of 300 test samples, the model correctly identified 289 emails, with only 11 misclassifications.
+### 5. Manual Testing (Spam vs. Legitimate)
 
-### 5. Manual Testing and Explanation
+**A. Manually Composed Spam Email:**
+> *"URGENT! You have WON a 1000$ GIFT CARD. CLICK HERE: http://win-rewards.com to claim. FREE PRIZE!"*
+* **Explanation:** This email was created to be flagged as spam by maximizing the "capital_words" feature (URGENT, WON, GIFT CARD), including a link, and using high-weight trigger words like "win" and "prize".
 
-**A. Composed Spam Email:**
-> *"URGENT! YOU WIN A FREE PRIZE. CLICK THE LINK NOW WWW.WIN-MONEY.COM"*
-* **Explanation:** This email was designed to trigger the spam filter by using high capital word counts, including a suspicious link, and using words like "win" and "prize" which carry high weight in the model.
+**B. Manually Composed Legitimate Email:**
+> *"Hi Avtandil, could you please send me the report for the last project? We need it for the 10 AM meeting tomorrow."*
+* **Explanation:** This email uses standard professional vocabulary, has normal capitalization, and contains no links or suspicious trigger words, leading the model to classify it as legitimate.
 
-**B. Composed Legitimate Email:**
-> *"Hi Avtandil, please check the project update I sent earlier today. Let me know if you have any questions."*
-* **Explanation:** This text is structured as a normal professional conversation. It has low capitalization, no links, and neutral vocabulary, leading the model to assign a very low spam probability.
+### 6. Visualizations
 
-### 6. Visual Analysis
-
-#### A: Class Distribution Study
+#### Visualization A: Class Distribution Study
 ![Class Distribution](distribution.png)
-* **Analysis:** This chart illustrates the ratio of Spam vs. Legitimate emails in our dataset. The distribution is nearly equal (~50/50), which ensures the model is not biased toward a majority class and learns both patterns effectively.
+* **Description:** This pie chart shows the balance of the dataset. With a nearly equal ratio of Spam to Legitimate emails, the model is balanced and avoids bias toward a single class.
 
-#### B: Confusion Matrix Heatmap
+#### Visualization B: Confusion Matrix Heatmap
 ![Confusion Matrix Heatmap](confusion_matrix.png)
-* **Analysis:** This heatmap provides a graphical look at our model's accuracy. The strong dark diagonal represents the True Negatives and True Positives, visually confirming the high accuracy score and low error rate.
-
----
-
+* **Description:** This heatmap provides a visual look at the model's accuracy. The high values on the diagonal represent correct classifications, showing that the model has a very low error rate for both classes.
